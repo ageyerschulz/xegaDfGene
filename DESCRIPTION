@@ -1,13 +1,13 @@
 Package: xegaDfGene 
 Title: Gene Operations for Real-Coded Genes
-Version: 1.0.0.0
+Version: 1.0.0.2
 Authors@R: 
     person(given = "Andreas",
            family = "Geyer-Schulz",
            role = c("aut", "cre"),
            email = "Andreas.Geyer-Schulz@kit.edu",
           comment = c(ORCID = "0009-0000-5237-3579"))
-Description: Representation-dependent gene level operations  
+Description: Representation-dependent gene-level operations  
         for genetic and evolutionary algorithms with real-coded genes
         are collected in this package. The common feature of the gene
         operations is that all of them are useful for derivation-free

@@ -12,13 +12,14 @@
 #'
 #' @return A constant scale factor.
 #'
-#' @family ScaleFactor
+#' @family Scale Factor
 #'
 #' @examples
 #' parm<-function(x){function() {return(x)}}
 #' lF<-list()
 #' lF$ScaleFactor1<-parm(0.90)
 #' ConstScaleFactor(lF)
+#' lF$ScaleFactor1<-parm(1.10)
 #' ConstScaleFactor(lF)
 #' @export
 ConstScaleFactor<-function(lF)
@@ -33,13 +34,14 @@ ConstScaleFactor<-function(lF)
 #'
 #' @return A constant scale factor.
 #'
-#' @family ScaleFactor
+#' @family Scale Factor
 #'
 #' @examples
 #' parm<-function(x){function() {return(x)}}
 #' lF<-list()
 #' lF$ScaleFactor1<-parm(0.90)
 #' UniformRandomScaleFactor(lF)
+#' lF$ScaleFactor1<-parm(1.10)
 #' UniformRandomScaleFactor(lF)
 #' @importFrom stats runif
 #' @export
@@ -49,7 +51,7 @@ UniformRandomScaleFactor<-function(lF)
 
 #' Configure the scale factor function for differential mutation.
 #'
-#' @description \code{xegaDfScaleFactorFactory} implements the selection
+#' @description \code{xegaDfScaleFactorFactory()} implements the selection
 #'              of one of the scale factor functions in this
 #'              package by specifying a text string.
 #'              The selection fails ungracefully (produces
@@ -59,8 +61,8 @@ UniformRandomScaleFactor<-function(lF)
 #'              Current support:
 #'
 #'              \enumerate{
-#'              \item "Const" returns \code{ConstScaleFactor}.
-#'              \item "Uniform" returns \code{UniformRandomScaleFactor}.
+#'              \item "Const" returns \code{ConstScaleFactor()}.
+#'              \item "Uniform" returns \code{UniformRandomScaleFactor()}.
 #'              }
 #'
 #' @details In the literature, several approaches have been suggested.
@@ -83,6 +85,8 @@ UniformRandomScaleFactor<-function(lF)
 #' @family Configuration
 #'
 #' @examples
+#' f<-xegaDfScaleFactorFactory("Const")
+#' f(lFxegaDfGene)
 #' f<-xegaDfScaleFactorFactory("Uniform")
 #' f(lFxegaDfGene)
 #' f(lFxegaDfGene)

@@ -8,20 +8,16 @@
 
 #' Map the parameter vector of a real-coded gene to an identical vector.
 #'
-#' @description \code{GenemapIdentity} maps the real parameter vector
+#' @description \code{xegaDfGeneMapIdentity()} maps the real parameter vector
 #'              to an identical vector.
 #'
 #' @details A \emph{gene} is a list with 
 #'          \enumerate{
-#'          \item \code{$evaluated} Boolean: TRUE if the fitness is known.
-#'          \item \code{$fit}       The fitness of the genotype of 
-#'                                  \code{$gene1}         
-#'          \item \code{$gene1}     a real parameter vector (the genetopye).
+#'          \item \code{$evaluated}: Boolean. TRUE if the fitness is known.
+#'          \item \code{$fit}:       The fitness of the genotype of 
+#'                                  \code{$gene1}.         
+#'          \item \code{$gene1}:     A real parameter vector (the genotopye).
 #'          }
-#'
-#'          This representation simplifies the implementation 
-#'          af various optimizations
-#'          and generalizations.
 #'
 #' @param gene    Real-coded gene (the genotype).
 #' @param penv    Problem environment.
@@ -42,7 +38,7 @@ return(gene)
 
 #' Configure the gene map function of a genetic algorithm.
 #'
-#' @description \code{xegaDfGeneMapFactory} implements the selection
+#' @description \code{xegaDfGeneMapFactory()} implements the selection
 #'              of one of the GeneMap functions in this
 #'              package by specifying a text string.
 #'              The selection fails ungracefully (produces
@@ -52,7 +48,7 @@ return(gene)
 #'              Current support:
 #'
 #'              \enumerate{
-#'              \item "Identity" returns \code{GeneMapIdentity}. (Default)
+#'              \item "Identity" returns \code{GeneMapIdentity()}. (Default)
 #'              }
 #'
 #' @param method       String specifying the GeneMap function.
@@ -75,11 +71,11 @@ return(f)
 
 #' Decode a gene
 #'
-#' @description \code{xegaDfDecodeGene} decodes a real gene.
-#' @details      \code{xegaDfDecodeGene} is the identy function.
+#' @description \code{xegaDfDecodeGene()} decodes a real gene.
+#' @details      \code{xegaDfDecodeGene()} is the identity function.
 #'
-#' @param gene   Real gene
-#' @param lF     Local configuration of the genetic algorithm
+#' @param gene   Real gene.
+#' @param lF     Local configuration of the genetic algorithm.
 #'
 #' @return Decoded gene.
 #'

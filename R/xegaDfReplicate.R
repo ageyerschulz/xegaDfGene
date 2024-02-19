@@ -9,7 +9,7 @@
 
 #' Replicates a gene (differential evolution).
 #'
-#' @description \code{ReplicateGeneDE} replicates a gene. Replication
+#' @description \code{xegaDfReplicateGeneDE()} replicates a gene. Replication
 #'              is the reproduction function which uses crossover and
 #'              mutation. The control flow of differential evolution 
 #'              is as follows:
@@ -28,7 +28,7 @@
 #'          this is 
 #'          the algorithm of Price, Storn and Lampinen (2005), page 41.
 #'
-#' @param pop    Population of binary genes.
+#' @param pop    Population of real-coded genes.
 #' @param fit    Fitness vector.
 #' @param lF     Local configuration of the genetic algorithm.
 #'
@@ -65,13 +65,13 @@ t1<-lF$EvalGene(trialGene, lF)
 
 #' Configure the replication function of a genetic algorithm.
 #'
-#' @description \code{ReplicationFactory} implements the selection
+#' @description \code{xegaDfReplicationFactory()} implements the selection
 #'              of a replication method. 
 #'
 #'              Current support:
 #'
 #'              \enumerate{
-#'              \item "DE" returns \code{ReplicateGeneDE}.
+#'              \item "DE" returns \code{xegaDfReplicateGeneDE()}.
 #'              }
 #'
 #' @param method A string specifying the replication function.

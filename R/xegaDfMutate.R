@@ -8,11 +8,11 @@
 
 #' Mutate a gene (differential mutation).
 #'
-#' @description \code{xegaDfMutateGeneDE} mutates a real-coded gene.
-#'               The scale factor is given by Scalefactor().
+#' @description \code{xegaDfMutateGeneDE()} mutates a real-coded gene.
+#'               The scale factor is given by \code{lF$ScaleFactor()}.
 #'
-#' @details  The difference of gene1 and gene2 is scaled by 
-#'           ScaleFactor() and added to gene0.
+#' @details  The difference between gene1 and gene2 is scaled by 
+#'           \code{lF$ScaleFactor()} and added to gene0.
 #'
 #' @param gene0  Real-coded gene (the base vector).
 #' @param gene1  Real-coded gene.
@@ -46,7 +46,7 @@ xegaDfMutateGeneDE<-function(gene0, gene1, gene2, lF)
 
 #' Configure the mutation function of a genetic algorithm.
 #'
-#' @description \code{xegaDfMutationFactory} implements the selection
+#' @description \code{xegaDfMutationFactory()} implements the selection
 #'              of one of the mutation functions in this
 #'              package by specifying a text string.
 #'              The selection fails ungracefully (produces
@@ -56,10 +56,10 @@ xegaDfMutateGeneDE<-function(gene0, gene1, gene2, lF)
 #'              Current support:
 #'
 #'              \enumerate{
-#'              \item "MutateGene" returns \code{xegaDfMutateGeneDE}.
+#'              \item "MutateGene" returns \code{xegaDfMutateGeneDE()}.
 #'                    To provide a working default for more than 
 #'                    one gene representation.
-#'              \item "MutateGeneDE" returns \code{xegaDfMutateGeneDE}.
+#'              \item "MutateGeneDE" returns \code{xegaDfMutateGeneDE()}.
 #'              }
 #'
 #' @param method    A string specifying the mutation function.

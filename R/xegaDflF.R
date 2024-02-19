@@ -8,7 +8,7 @@
 
 #' Generate local functions and objects
 #'
-#'@description \code{lFxegaDfGene} is 
+#'@description \code{lFxegaDfGene()} is 
 #'              the list of functions containing
 #'              a definition of all local objects required for the use
 #'              of evaluation functions. We reference this object 
@@ -23,15 +23,15 @@
 #'       Replacing all constants with constant functions.
 #'       
 #'       Rationale: We need one formal argument (the local function list lF)
-#'       and we can dispatch multiple functions. E.g.  \code{lF$verbose()}
+#'       and we can dispatch multiple functions. E.g.,  \code{lF$verbose()}.
 #'   \item    
-#'       We can dynamically bind a local function with a definition from a
+#'       Dynamically binding a local function with a definition from a
 #'       proper function factory. E.g., the selection methods 
-#'       \code{lf$SelectGene} and \code{lF$SelectMate}.
+#'       \code{lF$SelectGene()} and \code{lF$SelectMate()}.
 #'       
-#'  \item Gene representations require special functions to handle them:
-#'        \code{lf$InitGene}, \code{lF$DecodeGene}, \code{lf$EvalGene}
-#'        \code{lf$ReplicateGene}, ...
+#'  \item Gene representations requiring special functions to handle them:
+#'        \code{lF$InitGene()}, \code{lF$DecodeGene()}, \code{lF$EvalGene()},
+#'        \code{lF$ReplicateGene()}, ...
 #'       
 #'  } 
 #'

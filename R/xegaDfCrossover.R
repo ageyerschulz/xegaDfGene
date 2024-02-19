@@ -8,7 +8,7 @@
 
 #' One point crossover of 2 genes.
 #'
-#' @description \code{CrossGene} randomly determines a cut point.
+#' @description \code{xegaDfCrossGene()} randomly determines a cut point.
 #'     It combines the parameters before the cut point of the first gene
 #'     with the parameters after the cut point from the second gene (kid 1).
 #'
@@ -18,7 +18,7 @@
 #'
 #' @return Real-coded gene.
 #'
-#' @family Crossover (1)
+#' @family Crossover (Returns 1 Kid)
 #'
 #' @examples
 #' gene1<-xegaDfInitGene(lFxegaDfGene)
@@ -30,7 +30,7 @@
 xegaDfCrossGene<-function(gg1, gg2, lF)
 {
     g1<-gg1$gene1; g2<-gg2$gene1
-    cut<-sample(1:length(g1), 1)
+    cut<-sample(1:max(1,(length(g1)-1)), 1)
     ng<-gg1
     ng$gene1<-c(head(g1,cut), tail(g2, length(g2)-cut))
     # Tests on equality?
@@ -40,7 +40,7 @@ xegaDfCrossGene<-function(gg1, gg2, lF)
 
 #' Uniform crossover of 2 genes.
 #'
-#' @description \code{UCrossGene} swaps alleles of both genes
+#' @description \code{xegaDfUCrossGene()} swaps alleles of both genes
 #'              with a probability of 0.5. It generates a random 
 #'              mask which is used to build the new gene.
 #'
@@ -58,7 +58,7 @@ xegaDfCrossGene<-function(gg1, gg2, lF)
 #'
 #' @return Real-coded gene.
 #'
-#' @family Crossover (1)
+#' @family Crossover (Returns 1 Kid)
 #'
 #' @examples
 #' gene1<-xegaDfInitGene(lFxegaDfGene)
@@ -80,8 +80,8 @@ xegaDfUCrossGene<-function(gg1, gg2, lF)
 
 #' Parameterized uniform crossover of 2 genes.
 #'
-#' @description \code{UPCrossGene} swaps alleles of both genes
-#'              with a probability of \code{lF$UCrossSwap}. 
+#' @description \code{xegaDfUPCrossGene()} swaps alleles of both genes
+#'              with a probability of \code{lF$UCrossSwap()}. 
 #'              It generate a random 
 #'              mask which is used to build the new gene.
 #'
@@ -105,7 +105,7 @@ xegaDfUCrossGene<-function(gg1, gg2, lF)
 #'
 #' @return Real-coded gene.
 #'
-#' @family Crossover (1)
+#' @family Crossover (Returns 1 Kid)
 #'
 #' @examples
 #' gene1<-xegaDfInitGene(lFxegaDfGene)
@@ -127,21 +127,24 @@ xegaDfUPCrossGene<-function(gg1, gg2, lF)
 
 #' Configure the crossover function of a genetic algorithm.
 #'
-#' @description \code{xegaDfCrossoverFactory} implements the selection
+#' @description \code{xegaDfCrossoverFactory()} implements the selection
 #'              of one of the crossover functions in this
 #'              package by specifying a text string.
 #'              The selection fails ungracefully (produces
-#'              a runtime error), if the label does not match.
+#'              a runtime error) if the label does not match.
 #'              The functions are specified locally.
 #'
 #'              Current support:
 #'
 #'              Crossover functions with one kid:
 #'              \enumerate{
-#'              \item "CrossGene" returns \code{CrossGene}.
-#'              \item "UCrossGene" returns \code{UCrossGene}. Default.
-#'              \item "PUCrossGene" returns \code{PUCrossGene}.
+#'              \item "CrossGene" returns \code{CrossGene()}.
+#'              \item "UCrossGene" returns \code{UCrossGene()}. Default.
+#'              \item "UPCrossGene" returns \code{UPCrossGene()}.
 #'              }
+#'
+#' @details All crossover operations return a 1 kid. This implies that 
+#'          some part of the genetic material is lost.
 #'
 #' @param method     A string specifying the crossover function.
 #'

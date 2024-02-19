@@ -8,29 +8,26 @@
 
 #' Initialize a real-coded gene.
 #'
-#' @description \code{xegaDfInitGene} generates a random real-coded gene 
+#' @description \code{xegaDfInitGene()} generates a random real-coded gene 
 #'              with a given length.
 #'
 #' @details In the real-coded representation of 
-#'          package \code{xegaDf}, \emph{gene} is a list with 
+#'          package \code{xegaDf}, \emph{gene} is at least a list with 
 #'          \enumerate{
-#'          \item \code{$evaluated} Boolean: TRUE if the fitness is known.
-#'          \item \code{$fit}       The fitness of the genotype of 
-#'                                  \code{$gene1}         
-#'          \item \code{$gene1}     a real vector (the genetopye).
+#'          \item \code{$evaluated}: Boolean. TRUE if the fitness is known.
+#'          \item \code{$fit}:       The fitness of the genotype of 
+#'                                  \code{$gene1}.        
+#'          \item \code{$gene1}:     a real vector (the genotype).
 #'          }
-#'
-#'          This representation simplifies the implementation 
-#'          af various optimizations
-#'          and generalizations.
 #'
 #' @param lF   Local configuration of the genetic algorithm.
 #'
 #' @return A real-coded gene (a named list):
 #'         \itemize{
-#'         \item \code{$evaluated}: FALSE. See package \code{xegaEvalGene}.
+#'         \item \code{$evaluated}: FALSE. See package \code{xegaSelectGene}.
 #'         \item \code{$evalFail}:  FALSE. Set by the error handler(s)
-#'                                  in package \code{xegaEvalGene} 
+#'                                  of the Evaluation Functions
+#'                                  in package \code{xegaSelectGene} 
 #'                                  in the case of failure.
 #'         \item \code{$fit}:       Fitness.
 #'         \item \code{$gene1}:     A vector of reals.
