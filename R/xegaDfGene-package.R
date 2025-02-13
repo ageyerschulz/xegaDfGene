@@ -126,5 +126,4 @@
 #' @section License: MIT
 #' @section <URL: https://github.com/ageyerschulz/xegaDfGene>
 #' @section Installation: From CRAN by \code{install.packages('xegaDfGene')}
-NULL
-
+"_PACKAGE"

@@ -17,10 +17,10 @@ Description: Representation-dependent gene-level operations
         Price, Kenneth V., Storn, Rainer M. and Lampinen, Jouni A. (2005)
         <doi:10.1007/3-540-31306-0>. 
 License: MIT + file LICENSE
-URL: <https://github.com/ageyerschulz/xegaDfGene>
+URL: https://github.com/ageyerschulz/xegaDfGene
 Encoding: UTF-8
 LazyData: false
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Suggests: testthat (>= 3.0.0)
 Imports:
 	xegaSelectGene
