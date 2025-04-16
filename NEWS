@@ -11,5 +11,11 @@ Version 1.0.0.1 (2024-02-07)
 
 Version 1.0.0.2 (2024-02-19)
 
-- Multiple improvements in the domentation of functions.
+- Multiple improvements in the documentation of functions.
 
+Version 1.0.0.2 (2025-04-14)
+
+- xegaGedeInitGene: Initialization function for algorithm="sgede".
+- lFxegaDfGene:     Added Codons() and CodonPrecision().
+
+- 
