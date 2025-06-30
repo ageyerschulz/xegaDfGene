@@ -13,9 +13,16 @@ Version 1.0.0.2 (2024-02-19)
 
 - Multiple improvements in the documentation of functions.
 
-Version 1.0.0.2 (2025-04-14)
+Version 1.0.0.3 (2025-04-14)
 
 - xegaGedeInitGene: Initialization function for algorithm="sgede".
 - lFxegaDfGene:     Added Codons() and CodonPrecision().
 
-- 
+Version 1.0.0.4 (2025-06-29)
+
+- xegaDfReplicateGeneDEPipeline: Execution of functions evaluations 
+                    deferred to evaluation phase by producing
+                    function closures.
+
+- xegaDfReplicationFactory: Add "DEPipeline".
+

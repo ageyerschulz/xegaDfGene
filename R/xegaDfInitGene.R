@@ -9,7 +9,8 @@
 #' Initialize a real-coded gene.
 #'
 #' @description \code{xegaDfInitGene()} generates a random real-coded gene 
-#'              with a given length.
+#'              with a given length. The length of the gene is the 
+#'              length of \code{lF$penv$bitlength()}.
 #'
 #' @details In the real-coded representation of 
 #'          package \code{xegaDf}, \emph{gene} is at least a list with 
