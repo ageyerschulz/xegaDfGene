@@ -26,3 +26,10 @@ Version 1.0.0.4 (2025-06-29)
 
 - xegaDfReplicationFactory: Add "DEPipeline".
 
+Version 1.0.0.5 (2025-07-26)
+
+- UniformRandomScaleFactorDERSF(): Restricted uniform scale factor added.
+- DETVSF(): Linear decay of scale factor added.
+- CauchySF(): Cauchy distributed scale factor with linear growing scale factor.
+- xegaDfScaleFactorFactory:      Added options DERSF, DETVSF, and CauchySF.
+

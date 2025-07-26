@@ -1,6 +1,6 @@
 Package: xegaDfGene 
 Title: Gene Operations for Real-Coded Genes
-Version: 1.0.0.4
+Version: 1.0.0.5
 Authors@R: 
     person(given = "Andreas",
            family = "Geyer-Schulz",
