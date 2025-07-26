@@ -86,6 +86,10 @@ t1<-lF$EvalGene(trialGene, lF)
 #'          this is 
 #'          the algorithm of Price, Storn and Lampinen (2005), page 41.
 #'
+#'          \code{xegaDfReplicateGeneDEPipeline()} is a genetic operator
+#'          constructor which generates a function closure which embeds
+#'          differential mutation, crossover and the acceptance rule.
+#'
 #' @param pop    Population of real-coded genes.
 #' @param fit    Fitness vector.
 #' @param lF     Local configuration of the genetic algorithm.
