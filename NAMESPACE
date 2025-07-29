@@ -3,6 +3,8 @@
 export(CauchySF)
 export(ConstScaleFactor)
 export(DETVSF)
+export(FitnessBasedSelfAdaptiveSF)
+export(RandomGaussianSF)
 export(UniformRandomScaleFactor)
 export(UniformRandomScaleFactorDERSF)
 export(lFxegaDfGene)

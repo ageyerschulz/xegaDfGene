@@ -63,10 +63,13 @@ t1<-lF$EvalGene(trialGene, lF)
     return(list(lF$Accept(OperatorPipeline, targetGene, lF)))
 }
 
-#' Replicates a gene pipeline (differential evolution).
+#' Generates a function closure with a gene pipeline for differential evolution.
 #'
-#' @description \code{xegaDfReplicateGeneDEPipeline()} replicates 
-#'              a gene pipeline. Replication
+#' @description \code{xegaDfReplicateGeneDEPipeline()} embeds  
+#'              a gene pipeline for differential evolution and the 
+#'              genes necessary to evaluate it into 
+#'              a function closure.  
+#'              Replication
 #'              is the reproduction function which uses crossover and
 #'              mutation. The control flow of differential evolution 
 #'              is as follows:
@@ -118,19 +121,31 @@ targetGene<-pop[[lF$SelectGene(fit, lF)]]
 gene0<-pop[[lF$SelectGene(fit, lF)]]
 gene1<-pop[[lF$SelectGene(fit, lF)]]
 gene2<-pop[[lF$SelectGene(fit, lF)]]
+# force
+a<-targetGene
+a<-gene0
+a<-gene1
+a<-gene2
+# end of force
 Pipeline<-function(lF)
 {
 trialGene<-lF$CrossGene(targetGene,lF$MutateGene(gene0, gene1, gene2, lF))[[1]]
 t1<-lF$EvalGene(trialGene, lF)
     lF$trialGene<-parm(t1)
     OperatorPipeline<-function(g, lF) {lF$trialGene()}   
-    return(lF$Accept(OperatorPipeline, targetGene, lF))
+    t2<-lF$Accept(OperatorPipeline, targetGene, lF)
+    if (any(is.nan(t2$gene))) 
+    { cat("NaN discovered:\n")
+    cat("trialGene:\n"); print(trialGene); 
+    cat("targetGene:\n"); print(targetGene) 
+    cat("gene0:\n"); print(gene0); 
+    cat("gene1:\n"); print(gene1); 
+    cat("gene2:\n"); print(gene2); 
+    cat("t2:\n"); print(t2) 
+    }
+    return(t2)
+    #return(lF$Accept(OperatorPipeline, targetGene, lF))
 }
-# force
-a<-targetGene
-a<-gene0
-a<-gene1
-a<-gene2
 return(Pipeline)
 }
 

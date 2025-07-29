@@ -39,7 +39,24 @@
 xegaDfMutateGeneDE<-function(gene0, gene1, gene2, lF)
 {
 	ng<-gene0
+        lF$gene0<-gene0
+        a<-lF$gene0 # force!
+        # cat("xegaDFMutateGeneDE lF$gene0:\n")
+        # print(lF$gene0)
         ng$gene1<-gene0$gene1+lF$ScaleFactor(lF)*(gene1$gene1-gene2$gene1)
+        if (any(is.nan(ng$gene1))) 
+           {cat("xegaMutateGeneDE: NaN discovered:\n")
+            cat("Scale Factor:\n")
+            SF<-lF$ScaleFactor(lF)
+            cat("SF:", SF, "\n")
+            cat("gene1$gene1 - gene2$gene1:\n")
+            Diff<-gene1$gene1-gene2$gene1
+            cat("Diff:\n"); print(Diff)
+            Start<-gene0$gene1
+            cat("Start:\n"); print(Start)
+            Total<-Start+SF*Diff
+            cat("Total:\n"); print(Total)
+           }
 	ng$evaluated<-FALSE
 	return(ng) 
 }
