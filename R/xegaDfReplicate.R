@@ -147,7 +147,7 @@ t1<-lF$EvalGene(trialGene, lF)
     return(t2)
     #return(lF$Accept(OperatorPipeline, targetGene, lF))
 }
-  rlang::env_unbind(environment(Pipeline), c("lF", "a"))
+  rlang::env_unbind(environment(Pipeline), c("lF", "a", "pop", "fit"))
 return(Pipeline)
 }
 
