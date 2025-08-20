@@ -20,11 +20,11 @@ Version 1.0.0.3 (2025-04-14)
 
 Version 1.0.0.4 (2025-06-29)
 
-- xegaDfReplicateGeneDEPipeline: Execution of functions evaluations 
+- xegaDfReplicateGeneDEPipeline(): Execution of functions evaluations 
                     deferred to evaluation phase by producing
                     function closures.
 
-- xegaDfReplicationFactory: Add "DEPipeline".
+- xegaDfReplicationFactory(): Add "DEPipeline".
 
 Version 1.0.0.5 (2025-07-26)
 
@@ -35,4 +35,9 @@ Version 1.0.0.5 (2025-07-26)
 - RandomGaussianSF(): Random Gaussian scale factor.
 - xegaDfScaleFactorFactory: Added options DERSF, DETVSF, 
                             CauchySF, FBSASF, and RGSF.
+
+Version 1.0.0.6 (2025-08-20)
+
+- Remove objects not needed from captured environment:
+  xegaDfReplicateGeneDEPipeline().
 
