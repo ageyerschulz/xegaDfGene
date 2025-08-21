@@ -27,6 +27,9 @@
 #'          for \code{accept="Best"}
 #'          this is 
 #'          the algorithm of Price, Storn and Lampinen (2005), page 41.
+#'   
+#'          targetGene is selected with \code{lF$SelectGene()},
+#'          gene0, gene1, and gene2 are selected by \code{lF$SelectMate()}.
 #'
 #' @param pop    Population of real-coded genes.
 #' @param fit    Fitness vector.
@@ -53,9 +56,9 @@
 xegaDfReplicateGeneDE<- function(pop, fit, lF)
 {
 targetGene<-pop[[lF$SelectGene(fit, lF)]]
-gene0<-pop[[lF$SelectGene(fit, lF)]]
-gene1<-pop[[lF$SelectGene(fit, lF)]]
-gene2<-pop[[lF$SelectGene(fit, lF)]]
+gene0<-pop[[lF$SelectMate(fit, lF)]]
+gene1<-pop[[lF$SelectMate(fit, lF)]]
+gene2<-pop[[lF$SelectMate(fit, lF)]]
 trialGene<-lF$CrossGene(targetGene,lF$MutateGene(gene0, gene1, gene2, lF))[[1]]
 t1<-lF$EvalGene(trialGene, lF)
     lF$trialGene<-parm(t1)
@@ -119,9 +122,9 @@ t1<-lF$EvalGene(trialGene, lF)
 xegaDfReplicateGeneDEPipeline<- function(pop, fit, lF)
 {
 targetGene<-pop[[lF$SelectGene(fit, lF)]]
-gene0<-pop[[lF$SelectGene(fit, lF)]]
-gene1<-pop[[lF$SelectGene(fit, lF)]]
-gene2<-pop[[lF$SelectGene(fit, lF)]]
+gene0<-pop[[lF$SelectMate(fit, lF)]]
+gene1<-pop[[lF$SelectMate(fit, lF)]]
+gene2<-pop[[lF$SelectMate(fit, lF)]]
 # force
 a<-targetGene
 a<-gene0
